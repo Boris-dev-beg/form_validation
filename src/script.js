@@ -8,20 +8,30 @@ window.addEventListener("load", () => {
     const email = document.getElementById("email");
     const name = document.getElementById("name");
 
-    if (name.value.trim() === "" || parseInt(name.value)) {
-      name.classList.add("border-red-500");
-      name_error.classList.replace("hidden", "flex");
-    } else {
-      name.classList.remove("border-red-500");
-      name_error.classList.replace("flex", "hidden");
-    }
-    if (email.value.trim() === "") {
-      email.classList.add("border-red-500");
-      email_error.classList.replace("hidden", "flex");
-    } else {
-      email.classList.remove("border-red-500");
-      email_error.classList.replace("flex", "hidden");
-    }
-    alert(`Email And Name: ${ email.value +" "+ name.value}`)
+    if (checkName(name, name_error) && checkEmail(email, email_error))
+      alert(`Email And Name: ${email.value + " " + name.value}`);
   });
 });
+
+function checkName(name, name_error) {
+  if (name.value.trim() === "" || parseInt(name.value)) {
+    name.classList.add("border-red-500");
+    name_error.classList.replace("hidden", "flex");
+    return false;
+  } else {
+    name.classList.remove("border-red-500");
+    name_error.classList.replace("flex", "hidden");
+    return true;
+  }
+}
+function checkEmail(email, email_error) {
+  if (email.value.trim() === "") {
+    email.classList.add("border-red-500");
+    email_error.classList.replace("hidden", "flex");
+    return false
+  } else {
+    email.classList.remove("border-red-500");
+    email_error.classList.replace("flex", "hidden");
+    return true
+  }
+}
