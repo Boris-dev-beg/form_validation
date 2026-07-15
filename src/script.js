@@ -22,5 +22,6 @@ window.addEventListener("load", () => {
       email.classList.remove("border-red-500");
       email_error.classList.replace("flex", "hidden");
     }
+    alert(`Email And Name: ${ email.value +" "+ name.value}`)
   });
 });
