@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="relative w-screen h-screen flex items-center justify-center">
+    <img
+      src="./images/bg_image.jpg"
+      alt="bg_image"
+      class="w-full h-full absolute inset-0 -z-10"
+    />
+    <form
+      class="backdrop-blur-xs rounded-md p-5 h-120 w-100 flex flex-col items-center shadow-xs shadow-emerald-50 text-white justify-center gap-2"
+    >
+      <h1 class="font-black text-4xl tracking-wider">Login</h1>
+      <p class="w-full text-center py-1">Login to your account</p>
+      <div class="flex flex-col gap-1 w-full px-3 text-lg">
+        <label for="email" class="font-semibold">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email..."
+          class="focus:border-2 rounded-md p-2 border focus:outline-none"
+        />
+        <p
+          id="email_error"
+          class="text-sm text-red-500 font-semibold mt-1 hidden"
+        >
+          Email is invalid
+        </p>
+      </div>
+      <div class="flex flex-col gap-1 w-full px-3 text-lg">
+        <label for="name" class="font-semibold">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="name..."
+          class="focus:border-2 rounded-md p-2 border focus:outline-none"
+        />
+        <p
+          id="name_error"
+          class="text-sm text-red-500 font-semibold mt-1 hidden"
+        >
+          Name is invalid
+        </p>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-white hover:bg-slate-100 text-slate-800 py-2 rounded-full w-55 font-semibold mt-8 shadow-sm shadow-slate-300"
+      >
+        Login
+      </button>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>
